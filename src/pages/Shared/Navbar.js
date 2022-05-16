@@ -1,12 +1,28 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+    const navLinks = <>
+        <li><NavLink className="rounded-lg font-bold" to="/">Home</NavLink></li>
+        <li><NavLink className="rounded-lg font-bold" to="/about">About</NavLink></li>
+        <li><NavLink className="rounded-lg font-bold" to="/services">Services</NavLink></li>
+        <li><NavLink className="rounded-lg font-bold" to="/contact">Contact</NavLink></li>
+        <li><NavLink className="rounded-lg font-bold" to="/login">Login</NavLink></li>
+        <div class="dropdown dropdown-hover ">
+            <label tabindex="0" class="btn m-1 btn-primary btn-outline">BOOK NOW</label>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a>Item 1</a></li>
+                <li><a>Item 2</a></li>
+            </ul>
+        </div>
+
+    </>
     return (
         <div class="drawer drawer-end">
             <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col">
-                <div class="w-full navbar bg-base-300">
-                    <div class="flex-1 px-2 mx-2">Navbar Title</div>
+                <div class="w-full navbar bg-base-100">
+                    <div class="flex-1 px-2 mx-2">Clean Co.</div>
                     <div class="flex-none lg:hidden">
                         <label for="my-drawer-3" class="btn btn-square btn-ghost">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -15,8 +31,7 @@ const Navbar = () => {
 
                     <div class="flex-none hidden lg:block">
                         <ul class="menu menu-horizontal">
-                            <li><a>Navbar Item 1</a></li>
-                            <li><a>Navbar Item 2</a></li>
+                            {navLinks}
                         </ul>
                     </div>
                 </div>
@@ -25,9 +40,7 @@ const Navbar = () => {
             <div class="drawer-side">
                 <label for="my-drawer-3" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto  bg-base-100">
-                    <li><a>Sidebar Item 1</a></li>
-                    <li><a>Sidebar Item 2</a></li>
-
+                    {navLinks}
                 </ul>
 
             </div>
