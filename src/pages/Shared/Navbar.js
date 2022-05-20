@@ -15,8 +15,8 @@ const Navbar = ({ children }) => {
         <div class="dropdown dropdown-hover ">
             <label tabindex="0" class="btn m-1 btn-primary btn-outline">BOOK NOW</label>
             <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                <li><a>Item 1</a></li>
-                <li><a>Item 2</a></li>
+                <li><a>Quick Book</a></li>
+                <li><a>Pre Book</a></li>
             </ul>
         </div>
 
