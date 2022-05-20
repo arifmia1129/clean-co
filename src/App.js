@@ -1,15 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import About from './pages/About/About';
-import Login from './pages/Authentication/Login';
-import Contact from './pages/Contact/Contact';
-import Home from './pages/Home/Home';
-import Services from './pages/Services/Services';
 import Navbar from './pages/Shared/Navbar';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import { publicRoutes } from './routes/publicRoutes';
+import PrivateRoute from './authentication/PrivateRoute';
+import { privateRoutes } from './routes/privateRoutes';
 
 function App() {
   useEffect(() => {
@@ -20,10 +17,18 @@ function App() {
       <Navbar>
         <Routes>
           {
-            publicRoutes.map(({ path, Componotent }, index) => <Route
+            publicRoutes.map(({ path, Component }, index) => <Route
               key={index}
-              path={path} element={<Componotent />}></Route>)
+              path={path} element={<Component />}></Route>)
           }
+
+          <Route element={<PrivateRoute />}>
+            {
+              privateRoutes.map(({ path, Component }, index) => <Route
+                key={index}
+                path={path} element={<Component />}></Route>)
+            }
+          </Route>
         </Routes>
       </Navbar>
 
