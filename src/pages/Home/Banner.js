@@ -17,7 +17,7 @@ const Banner = () => {
                         data-aos-easing="ease-out-cubic"
                         data-aos-duration="2000"
                         data-aos-delay="100"
-                        class="text-5xl font-bold">Professional Cleaning Service</h1>
+                        class="text-3xl lg:text-5xl font-bold">Professional Cleaning Service</h1>
                     <p data-aos="flip-left"
                         data-aos-easing="ease-out-cubic"
                         data-aos-duration="3000"
